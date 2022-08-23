@@ -1,20 +1,31 @@
 <header>
   <div>
     <div class="images">
-      <div class="image"></div>
-      <div class="image"></div>
-      <div class="image"></div>
+      <div class="image"><%= link_to image_tag("093F920C-B714-4056-B2E7-8E813CCB30D8.jpeg", size: '400x400') %></div>
+      <div class="image"><%= link_to image_tag("IMG_0160.jpeg", size: '400x400') %></div>
+      <div class="image"><%= link_to image_tag("IMG_0170.jpeg", size: '400x400') %></div>
     </div>
   </div>
 </header>
 
+<div class="hamburger-menu">
+  <input type="checkbox" id="menu-btn-check">
+  <label for="menu-btn-check" class="menu-btn"><span></span></label>
+  <!--ここからメニュー-->
+  <div class="menu-content">
+    <%#= render partial: "sidebar", locals: { tags: @tags, restaurants: @restaurant_all } %>
+  </div>
+  <!--ここまでメニュー-->
+</div>
+
 <div class= main>
   <div class="time">
+    <h1>COUNT DOWN</h1>
     <div id="countdownArea" class="countdown">
-      <span id="countdown-day"></span>日
-      <span id="countdown-hour"></span>時間
-      <span id="countdown-min"></span>分
-      <span id="countdown-sec"></span>秒
+      <span id="countdown-day"></span>DAYS<br>
+      <span id="countdown-hour"></span>HOURS
+      <span id="countdown-min"></span>MINUTES
+      <span id="countdown-sec"></span>SECONDS
     </div>
   </div>
 
@@ -22,7 +33,7 @@
     <div class="message">
       <h1>WEDDING<br>INVITATION</h1>
       <h3>Hiroaki & Rino</h3>
-      <h3>2023 3 25</h3>
+      <h3>2023 / 3 / 25</h3>
       <p>皆様　いかがお過ごしでしょうか</P>
       <p>さて　このたび　私たちは結婚することとなりました</P>
       <p>つきましては　ご挨拶を兼ねて</P>
@@ -33,6 +44,6 @@
   </div>
 
   <div class="answer">
-    <div>form</div>
+    <div class="answer-btn">招待状に回答する</div>
   </div>
 </div>
