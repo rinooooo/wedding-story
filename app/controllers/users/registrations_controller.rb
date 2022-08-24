@@ -8,6 +8,36 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
+  def create
+    @user = User.new(sign_up_params)
+     unless @user.valid?
+       render :new and return
+     end
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    @wedding = @user.build_wedding
+    render :new_wedding
+  end
+
+  def create_wedding
+    @user = User.new(session["devise.regist_data"]["user"])
+    @wedding = Wedding.new(wedding_params)
+     unless @wedding.valid?
+       render :new_wedding and return
+     end
+    @user.build_wedding(@wedding.attributes)
+    binding.pry
+    @user.save
+    session["devise.regist_data"]["user"].clear
+    sign_in(:user, @user)
+  end
+ 
+  private
+ 
+  def wedding_params
+    params.require(:wedding).permit(:gloom_name, :bride_name, :gloom_name_en, :bride_name_en, :date, :answer_date, :message, :location, :url, :address)
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
