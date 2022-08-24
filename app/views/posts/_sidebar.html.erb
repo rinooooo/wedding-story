@@ -1,5 +1,8 @@
-<div class="login">ログイン</div>
-<div class="logout">ログアウト</div>
+<% if user_signed_in? %>
+  <div class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %></div>
+<% else %>
+  <div class="login"><%= link_to "ログイン", new_user_session_path %></div>
+<% end %>
 <div class="menu-list">
   <ul>
     <li>出欠管理</li>
