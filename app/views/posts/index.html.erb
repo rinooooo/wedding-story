@@ -1,0 +1,64 @@
+<header>
+  <div>
+    <div class="images">
+      <div class="image"><%= link_to image_tag("093F920C-B714-4056-B2E7-8E813CCB30D8.jpeg", size: '400x400') %></div>
+      <div class="image"><%= link_to image_tag("IMG_0160.jpeg", size: '400x400') %></div>
+      <div class="image"><%= link_to image_tag("IMG_0170.jpeg", size: '400x400') %></div>
+    </div>
+  </div>
+</header>
+
+<div class="hamburger-menu">
+  <input type="checkbox" id="menu-btn-check">
+  <label for="menu-btn-check" class="menu-btn"><span></span></label>
+  <!--ここからメニュー-->
+  <div class="menu-content">
+    <%= render partial: "sidebar" %>
+  </div>
+  <!--ここまでメニュー-->
+</div>
+
+<div class= main>
+
+  <div class="invitation">
+    <div class="message">
+      <h1>WEDDING<br>INVITATION</h1>
+      <h3>Hiroaki & Rino</h3>
+      <h3>2023 / 3 / 25</h3>
+      <p>皆様　いかがお過ごしでしょうか</P>
+      <p>さて　このたび　私たちは結婚することとなりました</P>
+      <p>つきましては　ご挨拶を兼ねて</P>
+      <p>ささやかなパーティーを催したいと思います</P>
+      <p>この日が皆様にとって楽しい一日になれば幸いです</P>
+    </div>
+  </div>
+
+  <div class="time">
+    <h1>COUNT DOWN</h1>
+    <div id="countdownArea" class="countdown">
+      <span id="countdown-day"></span>DAYS<br>
+      <span id="countdown-hour"></span>HOURS
+      <span id="countdown-min"></span>MINUTES
+      <span id="countdown-sec"></span>SECONDS
+    </div>
+  </div>
+
+  <div class="information">
+    <div class="message">
+      <h3>シギラアラマンダベイサイドスイート</h3>
+      <p>https://shigira.com/</P>
+    </div>
+  </div>
+
+  <div class="answer">
+    <div class="answer-content">
+    <div class="answer-message">
+      <p>お手数ではございますが</P>
+      <p>12月31日までにご返信くださいますよう</P>
+      <p>お願い申し上げます</P>
+      <p></P>
+    </div>
+    <div class="answer-btn">招待状に回答する</div>
+    </div>
+  </div>
+</div>
