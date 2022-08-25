@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_24_063134) do
+ActiveRecord::Schema.define(version: 2022_08_24_115746) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -53,5 +53,23 @@ ActiveRecord::Schema.define(version: 2022_08_24_063134) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weddings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "gloom_name", null: false
+    t.string "bride_name", null: false
+    t.string "gloom_name_en", null: false
+    t.string "bride_name_en", null: false
+    t.date "date", null: false
+    t.date "answer_date", null: false
+    t.text "message", null: false
+    t.string "location", null: false
+    t.string "url", null: false
+    t.string "address", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_weddings_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "weddings", "users"
 end

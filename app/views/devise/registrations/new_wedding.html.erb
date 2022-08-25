@@ -1,0 +1,61 @@
+<h2>Wedding情報登録</h2>
+
+<%= form_for @wedding do |f| %>
+  <%= render "devise/shared/error_messages", resource: @wedding %>
+
+  <div class="field">
+    <%= f.label :gloom_name %><br />
+    <%= f.text_field :gloom_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bride_name %><br />
+    <%= f.text_field :bride_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gloom_name_en %><br />
+    <%= f.text_field :gloom_name_en %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bride_name_en %><br />
+    <%= f.text_field :bride_name_en %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :answer_date %><br />
+    <%= f.text_field :answer_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_field :message %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
