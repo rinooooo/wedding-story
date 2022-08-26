@@ -26,7 +26,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
        render :new_wedding and return
      end
     @user.build_wedding(@wedding.attributes)
-    binding.pry
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
@@ -35,7 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
  
   def wedding_params
-    params.require(:wedding).permit(:gloom_name, :bride_name, :gloom_name_en, :bride_name_en, :date, :answer_date, :message, :location, :url, :address)
+    params.require(:wedding).permit(:gloom_name, :bride_name, :gloom_name_en, :bride_name_en, :date, :answer_date, :message, :message_info, :location, :url, :address, :reception_time, :wedding_time, :photo_time, :party_time, :bye_time, :second_party_time)
   end
 
   # GET /resource/sign_up
