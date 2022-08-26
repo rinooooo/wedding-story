@@ -1,11 +1,14 @@
 <% if user_signed_in? %>
   <div class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %></div>
+  <div class="logout"><%= link_to "式情報編集", "#" %></div>
 <% else %>
   <div class="login"><%= link_to "ログイン", new_user_session_path %></div>
 <% end %>
 <div class="menu-list">
   <ul>
-    <li>出欠管理</li>
+    <% if user_signed_in? %>
+      <li>出欠管理</li>
+    <% end %>
     <li>アルバム</li>
     <li>チャットルーム</li>
   </ul>

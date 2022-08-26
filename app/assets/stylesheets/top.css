@@ -1,7 +1,8 @@
 body {
-  background-color: rgba(127, 255, 212, 0.117);
+  background-color: white;
 }
 
+/*イメージ*/
 header {
   width: 100%;
   height: 480px;
@@ -21,18 +22,24 @@ header {
   height: 400px;
 }
 
+/*全体*/
 .main {
   width: 100%;
   box-sizing: border-box;
+  padding: 100px 0;
 }
 
+/*カウントダウン*/
 .time {
   width: 600px;
-  height: 400px;
   margin: 0 auto;
   box-sizing: border-box;
   text-align: center;
-  padding: 20px 0;
+  padding: 70px 0;
+}
+.time h1 {
+  font-size: 40px;
+  text-shadow: 1px 2px 3px #808080;
 }
 #countdown-day {
   font-size: 100px;
@@ -40,29 +47,92 @@ header {
 }
 #countdown-hour, #countdown-min, #countdown-sec {
   font-size: 50px;
-
 }
 
+/*招待状*/
 .invitation {
   width: 100%;
   height: 600px;
   box-sizing: border-box;
 }
 .message {
-  width: 70%;
+  width: 50%;
   height: 100%;
   margin: 0 auto;
   background-color: white;
   text-align: center;
   box-sizing: border-box;
   padding: 20px 0;
+  box-shadow: 10px 10px 10px 10px lightgray;
+}
+.message h1 {
+  font-size: 40px;
+  text-shadow: 1px 2px 3px #808080;
 }
 
-.information {
+/*式情報*/
+.info-content {
   margin: 0 auto;
   width: 70%;
-  height: 700px;
+  height: 1100px;
   background-color: white;
+  box-shadow: 10px 10px 10px 10px lightgray;
+  box-sizing: border-box;
+  padding: 50px 50px;
+}
+.schedule {
+  margin: 0 auto;
+  height: 55%;
+}
+.schedule-title {
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 1px 2px 3px #808080;
+}
+.schedule-lists {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.schedule-list {
+  width: 12%;
+  text-align: center;
+  padding: 30px 0;
+}
+.schedule-list img {
+  margin-bottom: 30px;
+  width: 90%;
+}
+.schedule-list p {
+  font-size: 20px;
+}
+.self-message {
+  font-size: 20px;
+  text-align: center;
+}
+.hr {
+  height: 5%;
+}
+.schedule-information {
+  height: 1px;
+  width: 90%;
+}
+.information {
+  margin: 0 auto;
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+.map {
+  width: 40%;
+  height: 90%;
+  background-color: lightgray;
+}
+.info-message {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .answer {
@@ -74,7 +144,7 @@ header {
   justify-content: center;
 }
 .answer-btn {
-  background-color: orange;
+  background: linear-gradient(to right, blue, lightblue);
   padding: 20px;
   font-size: 20px;
   color: white;

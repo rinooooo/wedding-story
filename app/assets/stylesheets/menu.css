@@ -5,7 +5,7 @@
   top: 0;
   right: 0;
   z-index: 80;
-  background-color: gold;
+  background: linear-gradient(to right, blue, lightblue);
 }
 
 /* ハンバーガー */
@@ -19,7 +19,7 @@
   justify-content: center;
   align-items: center;
   z-index: 90;
-  background-color: #FFAD32;
+  background: linear-gradient(to right, blue, lightblue);
 }
 .menu-btn span,
 .menu-btn span:before,
