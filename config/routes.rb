@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'weddings', to: 'users/registrations#new_wedding'
     post 'weddings', to: 'users/registrations#create_wedding'
+    root to: "devise/registrations#new"
   end
 
   resources :users do
     resources :posts, only: [:index]
   end
-  #root to: "posts#index"
 end
