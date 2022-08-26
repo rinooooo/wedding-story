@@ -63,9 +63,16 @@ ActiveRecord::Schema.define(version: 2022_11_11_111111) do
     t.date "date", null: false
     t.date "answer_date", null: false
     t.text "message", null: false
+    t.text "message_info", null: false
     t.string "location", null: false
     t.string "url", null: false
     t.string "address", null: false
+    t.time "reception_time", null: false
+    t.time "wedding_time", null: false
+    t.time "photo_time", null: false
+    t.time "party_time", null: false
+    t.time "bye_time", null: false
+    t.time "second_party_time", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
