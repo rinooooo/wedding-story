@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post 'weddings', to: 'users/registrations#create_wedding'
   end
 
-  resource :users do
+  resources :users do
     resources :posts, only: [:index]
   end
   root to: "posts#index"
