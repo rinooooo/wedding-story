@@ -43,7 +43,9 @@ https://docs.google.com/spreadsheets/d/1El7ZD9fm_-Jr2JhrcqEYPfjM8ya9GUwQNrZF2jfc
 
 
 # 実施予定の機能
-- 
+- ゲスト同士が式前後に連絡を取れるチャットルーム機能
+- 式後に主催者が写真を投稿できるアルバム機能
+
 
 # データベース設計
 ![](img/wedding_story_database.svg)
