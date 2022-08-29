@@ -3,8 +3,7 @@ Wedding Story
 
 # アプリケーション概要
 
-リゾート婚専用の結婚式web招待状です。
-主催者は、ゲストの出欠管理に加え、ゲストの旅行スケジュールを把握することができます。
+多機能の結婚式web招待状です。
 ゲストは、出欠回答時にコミュニティーを選択することで、同じコミュニティーのゲストと、webアプリを通じて連絡を取り合うことができます。式後には、主催者が撮った写真をアプリ上でダウンロードすることができます。
 
 # URL
@@ -24,10 +23,10 @@ Wedding Story
 
 # アプリケーションを作成した背景
 
-私自身、友人の結婚式に参加した際に
-高校の友人の結婚式に参列した際、高校の異なるコミュニティーの友人と話すタイミングが得られず、連絡先も知らなかったため、久々にあったのに話すことができませんでした。
-事前に、参列するゲストの情報を把握できていれば、連絡手段があれば、結婚式の可能性が広がると考えました。
-招待状の出欠回答で、コミュニティー（高校、大学、職場、等）を選択して、その中で参加するゲスト情報を一覧で見ることができ、連絡を取れるweb招待状を開発することにしました。
+私自身が友人の結婚式に参列した際に感じた課題を解決するために、アプリを作成しました。
+同じコミュニティーのゲストについては誰が招待されているか事前にわかることが多いですが、他のゲストは式当日まで知らないことが多いと思います。
+私自身、友人の結婚式で、式当日に久しぶりに合う友人が参列していることを知り、話したいと思っても、タイミングが合わずなかなか話すことができないことが多々ありました。
+そこで、事前に参列するゲストを把握できて、アプリ上で連絡を取ることができれば上記の課題が解決できると考え、開発することにしました。
 
 
 # 工夫した点
@@ -57,14 +56,6 @@ https://docs.google.com/spreadsheets/d/1El7ZD9fm_-Jr2JhrcqEYPfjM8ya9GUwQNrZF2jfc
 
 ### Association
 - has_one :wedding
-
-- has_many :comments
-- has_many :gos
-- has_many :wents
-- has_many :relationships
-- has_many :reverse_of_relationships
-- has_many :followings, through: :relationships, class_name: 'Relationship', source: :followed
-- has_many :followers, through: :reverse_of_relationships, class_name: 'Relationship', source: :follower
 
 
 ## weddings テーブル
