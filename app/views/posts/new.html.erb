@@ -1,7 +1,7 @@
 <h2>Wedding情報登録</h2>
 
-<%= form_for @post do |f| %>
-  <%= render "devise/shared/error_messages", resource: @post %>
+<%= form_with model: @post, url: user_posts_path(@user.id), local: true do |f| %>
+  <%#= render "devise/shared/error_messages", resource: @post %>
 
   <div class="field">
     <%= f.label :attendance_id %><br />
@@ -43,13 +43,15 @@
     <%= f.text_field :go_home %>
   </div>
 
-  <div class="field">
+  <!--div class="field">
     <%= f.label :tag %><br />
     <%= f.text_field :tag %>
+  </div-->
+
+  <div class="field">
+    <%= f.label :community %><br />
+    <%= f.text_field :community %>
   </div>
-
-
-
 
   <div class="field">
     <%= f.label :message %><br />
@@ -61,4 +63,3 @@
   </div>
 
 <% end %>
-</div>

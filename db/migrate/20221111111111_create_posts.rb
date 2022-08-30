@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer    :attendance_id,       null: false
       t.string     :name,                null: false
       t.string     :name_kana,           null: false
-      t.string     :name,                null: false
       t.string     :category_id,         null: false
       t.string     :address,             null: false
       t.string     :mail,                null: false
