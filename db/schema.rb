@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_11_11_111111) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "attendance_id", null: false
+    t.string "attendance_id", null: false
     t.string "name", null: false
     t.string "name_kana", null: false
     t.string "category_id", null: false

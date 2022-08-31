@@ -4,8 +4,10 @@
   <%#= render "devise/shared/error_messages", resource: @post %>
 
   <div class="field">
-    <%= f.label :attendance_id %><br />
-    <%= f.text_field :attendance_id %>
+    <%= f.radio_button :attendance_id, :attend %>
+    <%= f.label :attendance_id, "出席", {value: :attend, style: "display: inline-block;"} %>
+    <%= f.radio_button :attendance_id, :absence %>
+    <%= f.label :attendance_id, "欠席", {value: :absence, style: "display: inline-block;"} %>
   </div>
 
   <div class="field">
