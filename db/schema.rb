@@ -34,20 +34,21 @@ ActiveRecord::Schema.define(version: 2022_11_11_111111) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "attendance_id", null: false
+    t.string "attendance", null: false
     t.string "name", null: false
     t.string "name_kana", null: false
-    t.string "category_id", null: false
+    t.string "category_gloom"
+    t.string "category_bride"
     t.string "address", null: false
     t.string "mail", null: false
-    t.date "departure", null: false
-    t.date "go_home", null: false
+    t.date "departure"
+    t.date "go_home"
     t.integer "community", null: false
     t.text "message", null: false
-    t.bigint "user_id", null: false
+    t.bigint "wedding_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["wedding_id"], name: "index_posts_on_wedding_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -87,6 +88,6 @@ ActiveRecord::Schema.define(version: 2022_11_11_111111) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "posts", "users"
+  add_foreign_key "posts", "weddings"
   add_foreign_key "weddings", "users"
 end

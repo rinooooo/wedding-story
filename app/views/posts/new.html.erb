@@ -4,10 +4,10 @@
   <%#= render "devise/shared/error_messages", resource: @post %>
 
   <div class="field">
-    <%= f.radio_button :attendance_id, :attend %>
-    <%= f.label :attendance_id, "出席", {value: :attend, style: "display: inline-block;"} %>
-    <%= f.radio_button :attendance_id, :absence %>
-    <%= f.label :attendance_id, "欠席", {value: :absence, style: "display: inline-block;"} %>
+    <%= f.radio_button :attendance, :attend %>
+    <%= f.label :attendance, "出席", {value: :attend, style: "display: inline-block;"} %>
+    <%= f.radio_button :attendance, :absence %>
+    <%= f.label :attendance, "欠席", {value: :absence, style: "display: inline-block;"} %>
   </div>
 
   <div class="field">
@@ -21,8 +21,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %>
+    <%= f.check_box 'category_gloom', {:checked => true}, true, false %>
+    <%= f.label :category_gloom, "新郎", {value: :true, style: "display: inline-block;"} %>
+    <%= f.check_box 'category_bride', {:checked => true}, true, false %>
+    <%= f.label :category_bride, "新婦", {value: :true, style: "display: inline-block;"} %>
   </div>
 
   <div class="field">

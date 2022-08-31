@@ -21,8 +21,8 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:attendance_id, :name, :name_kana, :category_id, :address, :mail, :departure,
-      :go_home, :community, :message).merge(user_id: @user.id)
+    params.require(:post).permit(:attendance, :name, :name_kana, :category_gloom, :category_bride, :address, :mail, :departure,
+      :go_home, :community, :message).merge(wedding_id: @user.wedding.id)
   end
 
 end

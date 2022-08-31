@@ -104,8 +104,9 @@ https://docs.google.com/spreadsheets/d/1El7ZD9fm_-Jr2JhrcqEYPfjM8ya9GUwQNrZF2jfc
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
 | name_kana          | string     | null: false                    |
-| attendance_id      | integer    | null: false                    |
-| category_id        | integer    | null: false                    |
+| attendance         | string     | null: false                    |
+| category_gloom     | string     |                                |
+| category_bride     | string     |                                |
 | address            | string     | null: false                    |
 | mail               | string     | null: false                    |
 | departure          | date       |                                |
