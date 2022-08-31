@@ -10,7 +10,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string     :mail,                null: false
       t.date       :departure          
       t.date       :go_home             
-      t.integer    :community,           null: false
       t.text       :message,             null: false
       t.references :wedding, foreign_key: true, null: false
       t.timestamps
