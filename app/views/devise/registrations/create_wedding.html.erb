@@ -3,7 +3,5 @@
 <div>マイページはこちら</div>
 <div>http://localhost:3000/users/<%= @user.id %>/posts</div>
 
-
-<div>グループ登録はこちら</div>
-<%= link_to "登録", user_communities_path(@user.id) %>
+<%= link_to "グループ登録はこちら", user_communities_path(@user.id) %>
 
