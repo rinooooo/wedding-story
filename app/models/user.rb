@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :wedding
-  has_one :posts
+  has_one :post
 end

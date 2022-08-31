@@ -2,3 +2,6 @@
 <%#= link_to "トップへ戻る", ""%>
 <div>マイページはこちら</div>
 <div>http://localhost:3000/users/<%= @user.id %>/posts</div>
+
+<%= link_to "グループ登録はこちら", user_communities_path(@user.id) %>
+

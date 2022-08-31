@@ -1,0 +1,18 @@
+hello
+
+<%= form_with model: @community, url: user_communities_path(@user.id), remote: true do |f| %>
+
+  <div class="field">
+    <%= f.label :community_name %><br />
+    <%= f.text_field :community_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Next" %>
+  </div>
+<% end %>
+  
+<div id="community_lists">
+  <%= render partial: "community", locals: { communities: @communities } %>
+</div>
+

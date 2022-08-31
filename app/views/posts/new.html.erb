@@ -1,11 +1,13 @@
-<h2>Wedding情報登録</h2>
+<h2>招待状の回答</h2>
 
-<%= form_with model: @post, url: user_posts_path(@user.id), local: true do |f| %>
+<%= form_with model:@post_form, url: user_posts_path(@user.id), local: true do |f| %>
   <%#= render "devise/shared/error_messages", resource: @post %>
 
   <div class="field">
-    <%= f.label :attendance_id %><br />
-    <%= f.text_field :attendance_id %>
+    <%= f.radio_button :attendance, :attend %>
+    <%= f.label :attendance, "出席", {value: :attend, style: "display: inline-block;"} %>
+    <%= f.radio_button :attendance, :absence %>
+    <%= f.label :attendance, "欠席", {value: :absence, style: "display: inline-block;"} %>
   </div>
 
   <div class="field">
@@ -19,8 +21,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %>
+    <%= f.check_box 'category_gloom', {:checked => false}, true, false %>
+    <%= f.label :category_gloom, "新郎", {value: :true, style: "display: inline-block;"} %>
+    <%= f.check_box 'category_bride', {:checked => false}, true, false %>
+    <%= f.label :category_bride, "新婦", {value: :true, style: "display: inline-block;"} %>
   </div>
 
   <div class="field">
@@ -35,22 +39,17 @@
 
   <div class="field">
     <%= f.label :departure %><br />
-    <%= f.text_field :departure %>
+    <%= f.date_field :departure %>
   </div>
 
   <div class="field">
     <%= f.label :go_home %><br />
-    <%= f.text_field :go_home %>
+    <%= f.date_field :go_home %>
   </div>
 
-  <!--div class="field">
-    <%= f.label :tag %><br />
-    <%= f.text_field :tag %>
-  </div-->
-
   <div class="field">
-    <%= f.label :community %><br />
-    <%= f.text_field :community %>
+    <%= f.label :tag_name %><br />
+    <%= f.text_field :tag_name %>
   </div>
 
   <div class="field">
@@ -63,3 +62,4 @@
   </div>
 
 <% end %>
+<%= link_to "戻る", user_posts_path(@user.id) %>

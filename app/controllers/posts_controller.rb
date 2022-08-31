@@ -5,14 +5,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post_form = PostForm.new
     @user = User.find_by(params[:user_id])
   end
 
   def create
     @user = User.find_by(params[:user_id])
-    @post = Post.new(post_params)
-    if @post.save
+    # インスタンス生成
+    @post_form = PostForm.new(post_form_params)
+    # 新規登録
+    if @post_form.valid?
+      @post_form.save
       redirect_to action: :index, user_id: @user.id
     else
       render :new
@@ -20,9 +23,9 @@ class PostsController < ApplicationController
   end
 
   private
-  def post_params
-    params.require(:post).permit(:attendance_id, :name, :name_kana, :category_id, :address, :mail, :departure,
-      :go_home, :community, :message).merge(user_id: @user.id)
+  def post_form_params
+    params.require(:post_form).permit(:attendance, :name, :name_kana, :category_gloom, :category_bride, :address, :mail, :departure,
+                                      :go_home, :message, :tag_name).merge(wedding_id: @user.wedding.id)
   end
 
 end

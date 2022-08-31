@@ -10,11 +10,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(sign_up_params)
+    #バリデーションチェック
      unless @user.valid?
        render :new and return
      end
+    #入力内容をッションに保持
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    #weddingのインスタンス生成、遷移
     @wedding = @user.build_wedding
     render :new_wedding
   end
@@ -22,15 +25,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create_wedding
     @user = User.new(session["devise.regist_data"]["user"])
     @wedding = Wedding.new(wedding_params)
+    #バリデーションチェック
      unless @wedding.valid?
        render :new_wedding and return
      end
+    #userとweddingとcommunityをまとめてユーザー情報として保存
     @user.build_wedding(@wedding.attributes)
     @user.save
+    #セッション削除、ログイン
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
   end
- 
+
   private
  
   def wedding_params
