@@ -7,7 +7,7 @@
 <div class="menu-list">
   <ul>
     <% if user_signed_in? %>
-      <li>出欠管理</li>
+      <li><%= link_to "出欠管理", user_wedding_path(user.id, wedding.id) %></li>
     <% end %>
     <li>アルバム</li>
     <li>チャットルーム</li>

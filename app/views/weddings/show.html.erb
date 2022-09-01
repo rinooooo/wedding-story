@@ -1,0 +1,30 @@
+<div class="show-guests">
+    <table border="1" bordercolor="gray" width="100%" cellpadding="20">
+      <tr>
+        <td>出欠</td>
+        <td>名前</td>
+        <td>ナマエ</td>
+        <td>新郎側</td>
+        <td>新婦側</td>
+        <td>住所</td>
+        <td>email</td>
+        <td>到着日</td>
+        <td>帰宅日</td>
+        <td>メッセージ</td>
+      </tr>
+      <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.attendance %></td>
+        <td><%= post.name %></td>
+        <td><%= post.name_kana %></td>
+        <td><%= post.category_gloom %></td>
+        <td><%= post.category_bride %></td>
+        <td><%= post.address %></td>
+        <td><%= post.mail %></td>
+        <td><%= post.departure %></td>
+        <td><%= post.go_home %></td>
+        <td><%= post.message %></td>
+      </tr>
+      <% end %>
+    </table>
+</div>
