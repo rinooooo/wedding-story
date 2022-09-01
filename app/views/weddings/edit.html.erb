@@ -1,6 +1,6 @@
 <h2>Wedding情報編集</h2>
 
-<%= form_with model: @wedding, url: user_wedding_path(@user.id, @wedding.id) do |f| %>
+<%= form_with model: @wedding, url: user_wedding_path(@user.id, @wedding.id), local: true do |f| %>
   <%#= render "devise/shared/error_messages", resource: @wedding %>
 
   <div class="field">
