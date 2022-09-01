@@ -1,0 +1,94 @@
+<h2>Wedding情報編集</h2>
+
+<%= form_with model: @wedding, url: user_wedding_path(@user.id, @wedding.id), local: true do |f| %>
+  <%#= render "devise/shared/error_messages", resource: @wedding %>
+
+  <div class="field">
+    <%= f.label :gloom_name %><br />
+    <%= f.text_field :gloom_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bride_name %><br />
+    <%= f.text_field :bride_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gloom_name_en %><br />
+    <%= f.text_field :gloom_name_en %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bride_name_en %><br />
+    <%= f.text_field :bride_name_en %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :answer_date %><br />
+    <%= f.text_field :answer_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_field :message %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message_info %><br />
+    <%= f.text_field :message_info %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reception_time %><br />
+    <%= f.text_field :reception_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wedding_time %><br />
+    <%= f.text_field :wedding_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo_time %><br />
+    <%= f.text_field :photo_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :party_time %><br />
+    <%= f.text_field :party_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bye_time %><br />
+    <%= f.text_field :bye_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :second_party_time %><br />
+    <%= f.text_field :second_party_time %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
