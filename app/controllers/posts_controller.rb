@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
-  def index
-    @wedding = Wedding.find_by(user_id: params[:user_id])
-    @user = User.find_by(params[:user_id])
-  end
+  
 
   def new
     @post_form = PostForm.new
@@ -21,6 +18,8 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  
 
   private
   def post_form_params

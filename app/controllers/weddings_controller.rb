@@ -1,4 +1,9 @@
 class WeddingsController < ApplicationController
+  def index
+    @wedding = Wedding.find_by(user_id: params[:user_id])
+    @user = User.find_by(params[:user_id])
+  end
+  
   def edit
     @user = User.find(params[:user_id])
     @wedding = @user.wedding
@@ -14,6 +19,12 @@ class WeddingsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
+    @user = User.find_by(params[:user_id])
+    @wedding = Wedding.find_by(params[:id])
+    @posts = @wedding.posts
   end
 
   private
