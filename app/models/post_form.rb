@@ -17,7 +17,6 @@ class PostForm
   end
 
   def save
-    binding.pry
     post = Post.create(attendance: attendance, name: name, name_kana: name_kana, category_gloom: category_gloom, category_bride: category_bride, address: address, mail: mail, departure: departure,
       go_home: go_home, message: message, wedding_id: wedding_id)
     tag = Tag.where(tag_name: tag_name).first_or_initialize

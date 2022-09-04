@@ -1,7 +1,7 @@
 class WeddingsController < ApplicationController
   def index
     @wedding = Wedding.find_by(user_id: params[:user_id])
-    @user = User.find_by(params[:user_id])
+    @user = @wedding.user
   end
   
   def edit
@@ -12,18 +12,17 @@ class WeddingsController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @wedding = @user.wedding
-    binding.pry
     if @wedding.valid?
       @wedding.update(wedding_params)
-      redirect_to user_posts_path(@user.id)
+      redirect_to user_weddings_path(@user.id)
     else
       render :edit
     end
   end
 
   def show
-    @user = User.find_by(params[:user_id])
-    @wedding = Wedding.find_by(params[:id])
+    @user = User.find(params[:user_id])
+    @wedding = Wedding.find(params[:id])
     @posts = @wedding.posts
   end
 

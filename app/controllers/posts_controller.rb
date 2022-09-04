@@ -2,18 +2,18 @@ class PostsController < ApplicationController
   
 
   def new
+    @user = User.find(params[:user_id])
     @post_form = PostForm.new
-    @user = User.find_by(params[:user_id])
   end
 
   def create
-    @user = User.find_by(params[:user_id])
+    @user = User.find(params[:user_id])
     # インスタンス生成
     @post_form = PostForm.new(post_form_params)
     # 新規登録
     if @post_form.valid?
       @post_form.save
-      redirect_to action: :index, user_id: @user.id
+      redirect_to controller: :weddings, action: :index, user_id: @user.id
     else
       render :new
     end
