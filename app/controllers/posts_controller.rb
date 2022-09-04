@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @post_form = PostForm.new
+    @wedding = @user.wedding
+    @communities = @wedding.communities
   end
 
   def create
