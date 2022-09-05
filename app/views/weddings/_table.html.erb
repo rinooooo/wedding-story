@@ -10,6 +10,7 @@
         <td>到着日</td>
         <td>帰宅日</td>
         <td>メッセージ</td>
+        <td>コミュニティ</td>
       </tr>
       <% posts.each do |post| %>
       <tr>
@@ -23,6 +24,11 @@
         <td><%= post.departure %></td>
         <td><%= post.go_home %></td>
         <td><%= post.message %></td>
+        <td>
+          <% post.tags.each do |tag| %>
+            <%= tag.tag_name %>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </table>

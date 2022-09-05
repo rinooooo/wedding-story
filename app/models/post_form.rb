@@ -16,11 +16,14 @@ class PostForm
     validates :tag_name
   end
 
-  def save
+  def save(tag_list)
     post = Post.create(attendance: attendance, name: name, name_kana: name_kana, category_gloom: category_gloom, category_bride: category_bride, address: address, mail: mail, departure: departure,
       go_home: go_home, message: message, wedding_id: wedding_id)
-    tag = Tag.where(tag_name: tag_name).first_or_initialize
-    tag.save
-    PostTag.create(post_id: post.id, tag_id: tag.id)
+    
+    tag_list.each do |tag_name|
+      tag = Tag.where(tag_name: tag_name).first_or_initialize
+      tag.save
+      PostTag.create(post_id: post.id, tag_id: tag.id)
+    end
   end
 end

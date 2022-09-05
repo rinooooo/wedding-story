@@ -10,11 +10,15 @@ class PostsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
+    @wedding = @user.wedding
+    @communities = @wedding.communities
     # インスタンス生成
     @post_form = PostForm.new(post_form_params)
+    tag_list = params[:post_form][:tag_name].split(",")
     # 新規登録
+    binding.pry
     if @post_form.valid?
-      @post_form.save
+      @post_form.save(tag_list)
       redirect_to controller: :weddings, action: :index, user_id: @user.id
     else
       render :new

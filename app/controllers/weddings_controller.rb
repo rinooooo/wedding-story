@@ -2,6 +2,8 @@ class WeddingsController < ApplicationController
   def index
     @wedding = Wedding.find_by(user_id: params[:user_id])
     @user = @wedding.user
+    @communities = @wedding.communities
+    @post_form = PostForm.new
   end
   
   def edit

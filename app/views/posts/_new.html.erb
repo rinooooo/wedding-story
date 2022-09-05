@@ -1,6 +1,7 @@
+<div id="post_new">
 <h2>招待状の回答</h2>
 
-<%= form_with model:@post_form, url: user_posts_path(user_id: @user.id), local: true do |f| %>
+<%= form_with model:post_form, url: user_posts_path(user_id: user.id), remote: true do |f| %>
   <%#= render "devise/shared/error_messages", resource: @post %>
 
   <div class="field">
@@ -48,17 +49,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :tag_name %>  下記より参加希望のグループを選択し、記入してください<br />
-    <%= f.text_field :tag_name %>
+    <%= f.label :tag_name %><br/>下記より参加希望のグループを選択し、記入してください<br />
+    <%= f.text_field :tag_name, placeholder:",で区切ってください" %>
   </div>
   <div>
+    <% communities.each do |community| %>
     <ul>
       <li>
-        <% @communities.each do |community| %>
-          <%= community.community_name %>
-        <% end %>
+        <%= community.community_name %>
       </li>
     </ul>
+    <% end %>
   </div>
 
   <div class="field">
@@ -71,4 +72,8 @@
   </div>
 
 <% end %>
-<%= link_to "戻る", user_weddings_path(@user.id) %>
+<div id="new-back">
+<%= link_to "戻る", user_weddings_path(user.id), remote: true %>
+</div>
+
+</div>
