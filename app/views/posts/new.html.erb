@@ -49,16 +49,16 @@
 
   <div class="field">
     <%= f.label :tag_name %>  下記より参加希望のグループを選択し、記入してください<br />
-    <%= f.text_field :tag_names, placeholder:",で区切ってください" %>
+    <%= f.text_field :tag_name, placeholder:",で区切ってください" %>
   </div>
   <div>
+    <% @communities.each do |community| %>
     <ul>
       <li>
-        <% @communities.each do |community| %>
-          <%= community.community_name %>
-        <% end %>
+        <%= community.community_name %>
       </li>
     </ul>
+    <% end %>
   </div>
 
   <div class="field">
