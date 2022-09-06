@@ -3,14 +3,24 @@ class CommunitiesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @community = Community.new
-    @communities = Community.all
+    @wedding = @user.wedding
+    @communities = @wedding.communities
   end
 
   def create
     @user = User.find(params[:user_id])
     @community = Community.new(community_params)
     @community.save
-    @communities = Community.all
+    @wedding = @user.wedding
+    @communities = @wedding.communities
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @wedding = @user.wedding
+    @community = Community.find(params[:id])
+    @community.destroy
+    @communities = @wedding.communities
   end
 
   private

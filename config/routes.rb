@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :posts, only: [:new, :create]
-    resources :communities, only: [:index, :create]
+    resources :communities, only: [:index, :create, :destroy]
     resources :weddings, only: [:index, :edit, :update, :show]
   end
 
