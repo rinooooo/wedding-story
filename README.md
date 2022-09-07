@@ -33,9 +33,6 @@ Wedding Story
 
 現在制作中です。
 
-# 要件定義
-
-https://docs.google.com/spreadsheets/d/1El7ZD9fm_-Jr2JhrcqEYPfjM8ya9GUwQNrZF2jfcjP0/edit#gid=982722306
 
 # 実施した機能についての画像やGIFおよびその説明
 
