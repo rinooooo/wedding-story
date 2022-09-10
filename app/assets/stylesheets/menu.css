@@ -8,6 +8,39 @@
   background: linear-gradient(to right, blue, lightblue);
 }
 
+.logout {
+  margin-top: 70px;
+  margin-left: 40px;
+  margin-bottom: 35px;
+}
+.logout a {
+  background-color: white;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+.logout a:hover {
+  background-color: gray;
+}
+.menu-lists {
+  margin-left: 20px;
+}
+.menu-list a {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+}
+.menu-list a:hover {
+  color: gray;
+}
+
 /* ハンバーガー */
 .menu-btn {
   position: fixed;

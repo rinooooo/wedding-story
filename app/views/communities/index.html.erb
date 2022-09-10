@@ -1,14 +1,17 @@
-hello
+<div class="community">
+<h1>コミュニティー登録</h1>
+コミュニティーを設定すると、本アプリを通してゲスト同士で連絡を取り合うことができます</br>
+（ゲストの出欠回答時にコミュニティーを選んでもらう）
 
+<div class="community-content">
 <%= form_with model: @community, url: user_communities_path(@user.id), remote: true do |f| %>
 
-  <div class="field">
-    <%= f.label :community_name %><br />
-    <%= f.text_field :community_name %>
+  <div>
+    コミュニティー名<br />
+    <%= f.text_field :community_name, placeholder:"新郎大学" %>
   </div>
-
   <div class="actions">
-    <%= f.submit "Next" %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>
   
@@ -16,4 +19,5 @@ hello
   <%= render partial: "community", locals: { communities: @communities } %>
 </div>
 
-<%= link_to "戻る", user_weddings_path(@user.id) %>
+<%= link_to "マイページへ", user_weddings_path(@user.id) %>
+</div>

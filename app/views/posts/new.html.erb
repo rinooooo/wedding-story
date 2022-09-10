@@ -1,10 +1,11 @@
 <div id="post_new">
-<h2>招待状の回答</h2>
+<%= link_to "戻る", user_weddings_path(@user.id) %>
 
 <%= form_with model:@post_form, url: user_posts_path(user_id: @user.id), local: true do |f| %>
   <%#= render "devise/shared/error_messages", resource: @post %>
 
-  <div class="field">
+  出欠
+  <div class="field select">
     <%= f.radio_button :attendance, :attend %>
     <%= f.label :attendance, "出席", {value: :attend, style: "display: inline-block;"} %>
     <%= f.radio_button :attendance, :absence %>
@@ -12,16 +13,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    名前<br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :name_kana %><br />
+    名前(カタカナ)<br />
     <%= f.text_field :name_kana %>
   </div>
 
-  <div class="field">
+  招待分類<br/>
+  <div class="field select">
     <%= f.check_box 'category_gloom', {:checked => false}, true, false %>
     <%= f.label :category_gloom, "新郎", {value: :true, style: "display: inline-block;"} %>
     <%= f.check_box 'category_bride', {:checked => false}, true, false %>
@@ -29,42 +31,38 @@
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
+    住所<br />
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :mail %><br />
+    メールアドレス<br />
     <%= f.text_field :mail %>
   </div>
 
   <div class="field">
-    <%= f.label :departure %><br />
+    出発日<br />
     <%= f.date_field :departure %>
   </div>
 
   <div class="field">
-    <%= f.label :go_home %><br />
+    帰宅日<br />
     <%= f.date_field :go_home %>
   </div>
 
   <div class="field">
-    <%= f.label :tag_name %><br/>下記より参加希望のグループを選択し、記入してください<br />
-    <%= f.text_field :tag_name, placeholder:",で区切ってください" %>
-  </div>
-  <div>
-    <% @communities.each do |community| %>
-    <ul>
-      <li>
-        <%= community.community_name %>
-      </li>
-    </ul>
-    <% end %>
+    メッセージ<br />
+    <%= f.text_field :message %>
   </div>
 
   <div class="field">
-    <%= f.label :message %><br />
-    <%= f.text_field :message %>
+    下記よりコミュニティーを選択してください<br />
+    <div class="all-community">
+      / <% @communities.each do |community| %>
+          <%= community.community_name %> /
+      <% end %>
+    </div><br/>
+    <%= f.text_field :tag_name, placeholder:",で区切ってください" %>
   </div>
 
   <div class="actions">
@@ -72,8 +70,5 @@
   </div>
 
 <% end %>
-<div id="new-back">
-<%= link_to "戻る", user_weddings_path(@user.id) %>
-</div>
 
 </div>

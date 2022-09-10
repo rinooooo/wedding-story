@@ -1,90 +1,99 @@
-<h2>Wedding情報編集</h2>
+<h1>
+  Wedding情報編集</br>
+  <%= link_to "コミュニティー編集はこちらから", user_communities_path(@user.id) %></br>
+  <%= link_to "戻る", user_weddings_path(@user.id) %>
+</h1>
 
+<div class="wedding-registration">
 <%= form_with model: @wedding, url: user_wedding_path(@user.id, @wedding.id), local: true do |f| %>
   <%#= render "devise/shared/error_messages", resource: @wedding %>
 
+  <h2>お二人について教えてください</h2>
   <div class="field">
-    <%= f.label :gloom_name %><br />
+    新郎 名前<br />
     <%= f.text_field :gloom_name %>
   </div>
 
   <div class="field">
-    <%= f.label :bride_name %><br />
+    新婦 名前<br />
     <%= f.text_field :bride_name %>
   </div>
 
   <div class="field">
-    <%= f.label :gloom_name_en %><br />
+    新郎 名前(ローマ字)<br />
     <%= f.text_field :gloom_name_en %>
   </div>
 
   <div class="field">
-    <%= f.label :bride_name_en %><br />
+    新婦 名前(ローマ字)<br />
     <%= f.text_field :bride_name_en %>
   </div>
 
   <div class="field">
-    <%= f.label :date %><br />
+    挙式日<br />
     <%= f.text_field :date %>
   </div>
 
   <div class="field">
-    <%= f.label :answer_date %><br />
+    ゲスト回答期限<br />
     <%= f.text_field :answer_date %>
   </div>
 
   <div class="field">
-    <%= f.label :message %><br />
+    ゲストへのメッセージ<br />
     <%= f.text_field :message %>
   </div>
 
-  <div class="field">
-    <%= f.label :message_info %><br />
-    <%= f.text_field :message_info %>
-  </div>
+  <h2>挙式会場について教えてください</h2>
 
   <div class="field">
-    <%= f.label :location %><br />
+    名前<br />
     <%= f.text_field :location %>
   </div>
 
   <div class="field">
-    <%= f.label :url %><br />
+    ホームページURL<br />
     <%= f.text_field :url %>
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
+    住所<br />
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :reception_time %><br />
+    挙式会場に関するメッセージ<br />
+    <%= f.text_field :message_info %>
+  </div>
+
+  <h2>タイムスケジュールについて教えてください</h2>
+  <div class="field">
+    受付時間<br />
     <%= f.text_field :reception_time %>
   </div>
 
   <div class="field">
-    <%= f.label :wedding_time %><br />
+    挙式開始時間<br />
     <%= f.text_field :wedding_time %>
   </div>
 
   <div class="field">
-    <%= f.label :photo_time %><br />
+    写真撮影開始時間<br />
     <%= f.text_field :photo_time %>
   </div>
 
   <div class="field">
-    <%= f.label :party_time %><br />
+    パーティー開始時間<br />
     <%= f.text_field :party_time %>
   </div>
 
   <div class="field">
-    <%= f.label :bye_time %><br />
+    パーティー終了時間<br />
     <%= f.text_field :bye_time %>
   </div>
 
   <div class="field">
-    <%= f.label :second_party_time %><br />
+    2次会開始時間<br />
     <%= f.text_field :second_party_time %>
   </div>
 
@@ -92,5 +101,5 @@
     <%= f.submit "更新" %>
   </div>
 <% end %>
-<%= link_to "戻る", user_weddings_path(@user.id) %>
-<%= link_to "コミュニティー編集", user_communities_path(@user.id) %>
+</div>
+
