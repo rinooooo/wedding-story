@@ -1,7 +1,9 @@
 <h2>登録が完了しました</h2>
-<%#= link_to "トップへ戻る", ""%>
-<div>マイページはこちら</div>
-<div>http://localhost:3000/users/<%= @user.id %>/weddings</div>
 
-<%= link_to "グループ登録はこちら", user_communities_path(@user.id) %>
+<%= link_to "マイページはこちら", user_weddings_path(@user.id) %>
+<div>http://localhost:3000/users/<%= @user.id %>/weddings</div></br>
+※URLを控えてください
+
+<%= link_to "グループ登録はこちら", user_communities_path(@user.id) %></br>
+※マイページからも登録できます
 
