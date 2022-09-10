@@ -13,3 +13,13 @@ h1 a {
   font-size: 20px;
   color: blue;
 }
+
+.community {
+  text-align: center;
+}
+.community-content {
+  margin-top: 50px;
+}
+#community_lists {
+  margin: 20px;
+}
