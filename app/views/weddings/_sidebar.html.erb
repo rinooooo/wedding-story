@@ -2,7 +2,7 @@
   <div class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
   <%= link_to "式情報編集", edit_user_wedding_path(user.id, wedding.id) %></div>
 <% else %>
-  <div class="login"><%= link_to "ログイン", new_user_session_path %></div>
+  <div class="logout"><%= link_to "ログイン", new_user_session_path %></div>
 <% end %>
 <div class="menu-lists">
   <ul>
