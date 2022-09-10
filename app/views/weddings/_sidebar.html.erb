@@ -1,15 +1,15 @@
 <% if user_signed_in? %>
-  <div class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %></div>
-  <div class="logout"><%= link_to "式情報編集", edit_user_wedding_path(user.id, wedding.id) %></div>
+  <div class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
+  <%= link_to "式情報編集", edit_user_wedding_path(user.id, wedding.id) %></div>
 <% else %>
   <div class="login"><%= link_to "ログイン", new_user_session_path %></div>
 <% end %>
-<div class="menu-list">
+<div class="menu-lists">
   <ul>
     <% if user_signed_in? %>
-      <li><%= link_to "出欠管理", user_wedding_path(user.id, wedding.id) %></li>
+      <li class="menu-list"><%= link_to "出欠管理", user_wedding_path(user.id, wedding.id) %></li>
     <% end %>
-    <li>アルバム</li>
-    <li>チャットルーム</li>
+    <li class="menu-list"><%= link_to "アルバム", "#" %></li>
+    <li class="menu-list"><%= link_to "チャットルーム", "#" %></li>
   </ul>
 </div>
