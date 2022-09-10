@@ -1,0 +1,13 @@
+h1 {
+  margin: 50px 0;
+  text-align: center;
+}
+.wedding-registration {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+.wedding-registration h2 {
+  font-size: 20px;
+  color: blue;
+}
