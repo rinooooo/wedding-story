@@ -1,0 +1,12 @@
+.show {
+  padding: 50px 120px;
+}
+table {
+  width: 100%;
+}
+
+
+
+  #sampleTable  th                {border : 1px solid #666;}
+  #sampleTable  td                {border : 1px solid #666;}
+  .allNoDisplay tr:not(.colTitle) {display: none;}
