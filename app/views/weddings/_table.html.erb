@@ -17,6 +17,7 @@
     <th>帰宅日</th>
     <th>メッセージ</th>
     <th>コミュニティ</th>
+    <th>削除</th>
   </tr>
   <% posts.each do |post| %>
     <tr>
@@ -30,6 +31,7 @@
     <td><%= post.departure %></td>
     <td><%= post.go_home %></td>
     <td><%= post.message %></td>
+    <td><%= link_to '削除', user_post_path(@user.id, post.id), method: :delete, class: "destroy" %></td>
     <td>
       <% post.tags.each do |tag| %>
         <%= tag.tag_name %>
