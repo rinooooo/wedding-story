@@ -24,6 +24,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @wedding = @user.wedding
+    @post = Post.find(params[:user_id])
+    @post.destroy
+    redirect_to controller: :weddings, action: :show, user_id: @user.id, id: @wedding.id
+  end
+
   
 
   private
