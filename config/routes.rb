@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:new, :create, :destroy]
     resources :communities, only: [:index, :create, :destroy]
     resources :weddings, only: [:index, :edit, :update, :show]
-    resources :albums, only: [:index]
+    resources :albums, only: [:index, :create]
   end
 
   

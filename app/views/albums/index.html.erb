@@ -1,1 +1,13 @@
-hello
+<%= form_with model: @album, url: user_albums_path(@user.id), local: true do |f| %>
+
+  <div class="click-upload">
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
+
+<% if @albums != nil %>
+  <%= image_tag @albums.image, class: 'message-image' if @albums.image.attached? %>
+<% end %>
