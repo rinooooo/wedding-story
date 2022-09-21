@@ -11,3 +11,5 @@
 <% if @albums != nil %>
   <%= image_tag @albums.image, class: 'message-image' if @albums.image.attached? %>
 <% end %>
+
+<%= link_to "戻る", user_weddings_path(@user.id) %>
