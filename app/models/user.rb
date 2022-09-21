@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :wedding
   has_one :post
+  has_one :album
 end
