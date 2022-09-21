@@ -9,7 +9,7 @@
     <% if user_signed_in? %>
       <li class="menu-list"><%= link_to "出欠管理", user_wedding_path(user.id, wedding.id) %></li>
     <% end %>
-    <li class="menu-list"><%= link_to "アルバム", "#" %></li>
+    <li class="menu-list"><%= link_to "アルバム", user_albums_path(user.id) %></li>
     <li class="menu-list"><%= link_to "チャットルーム", "#" %></li>
   </ul>
 </div>
