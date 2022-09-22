@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_11_111115) do
+ActiveRecord::Schema.define(version: 2022_11_11_111116) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 2022_11_11_111115) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "comment", null: false
+    t.bigint "wedding_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wedding_id"], name: "index_chats_on_wedding_id"
   end
 
   create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -118,6 +126,7 @@ ActiveRecord::Schema.define(version: 2022_11_11_111115) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "albums", "users"
+  add_foreign_key "chats", "weddings"
   add_foreign_key "communities", "weddings"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
