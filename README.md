@@ -55,6 +55,7 @@ Wedding Story
 
 ### Association
 - has_one :wedding
+- has_one :album
 
 
 ## weddings テーブル
@@ -139,7 +140,7 @@ Wedding Story
 - belongs_to :tag
 
 
-## comments テーブル
+## chats テーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
@@ -149,6 +150,13 @@ Wedding Story
 ### Association
 - belongs_to :tag
 
+## albums テーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user                | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
 
  
 # 画面遷移図
