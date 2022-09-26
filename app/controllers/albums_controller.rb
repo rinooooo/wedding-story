@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
+    @wedding = @user.wedding
     @album = Album.new
     @albums = @user.album
   end
