@@ -8,6 +8,18 @@
   <!--ここまでメニュー-->
 </div>
 
+<div class="wedding-story">
+    <div class="message">
+      <h1>WEDDING　MEMORIES</h1>
+      <h3><%= @wedding.gloom_name_en %> & <%= @wedding.bride_name_en %></h3>
+      <h3><%= @wedding.date %></h3>
+      <p>私たちのパーティーに参加してくださりありがとうございました</P>
+      <p>皆様との写真を共有させていただきます</P>
+    </div>
+</div>
+
+<% if user_signed_in? %>
+<div class="photo-form">
 <%= form_with model: @album, url: user_albums_path(@user.id), local: true do |f| %>
 
   <div class="click-upload">
@@ -17,11 +29,13 @@
     <%= f.submit "登録" %>
   </div>
 <% end %>
+</div>
+<% end %>
 
 <% if @albums != nil %>
 <div class="photos">
   <% @images.each do |image| %>
-    <%= image_tag(image, width:100) %>
+    <%= image_tag(image, width:200) %>
   <% end %>
 </div>
 <% end %>
