@@ -4,17 +4,18 @@ class AlbumsController < ApplicationController
     @wedding = @user.wedding
     @album = Album.new
     @albums = @user.album
+    @images = @albums.images
   end
 
   def create
     @user = User.find(params[:user_id])
-    binding.pry
-    @album = Album.create(album_params)
+    @album = Album.new(album_params)
+    @album.save
     redirect_to user_albums_path(@user.id)
   end
 
   private
   def album_params
-    params.require(:album).permit(:image).merge(user_id: @user.id)
+    params.require(:album).permit(images: []).merge(user_id: @user.id)
   end
 end

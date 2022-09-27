@@ -18,8 +18,12 @@
   </div>
 <% end %>
 
-<% if @albums != nil %>
-  <%= image_tag @albums.image, class: 'message-image' if @albums.image.attached? %>
-<% end %>
+<div class="photos">
+<%# if @images != nil %>
+  <% @images.each do |image| %>
+    <%= image_tag(image, width:100) %>
+  <% end %>
+<%# end %>
+</div>
 
 <%= link_to "戻る", user_weddings_path(@user.id) %>
