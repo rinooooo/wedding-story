@@ -6,6 +6,7 @@
 <% end %>
 <div class="menu-lists">
   <ul>
+    <li class="menu-list"><%= link_to "トップページ", user_weddings_path(user.id) %></li>
     <% if user_signed_in? %>
       <li class="menu-list"><%= link_to "出欠管理", user_wedding_path(user.id, wedding.id) %></li>
     <% end %>
